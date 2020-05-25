@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1035984603225",
+    "firebase_url": "https://fbdatabase-22ae2.firebaseio.com",
+    "project_id": "fbdatabase-22ae2",
+    "storage_bucket": "fbdatabase-22ae2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035984603225:android:1edaccc3a2c7c9d3e9c948",
+        "android_client_info": {
+          "package_name": "com.neelasurya.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035984603225-3ib3c0h6cles5im7rkm1g7u2530p5iv7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxi07fPJ4j3RGgk4JATxM39WksHEejt2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035984603225-3ib3c0h6cles5im7rkm1g7u2530p5iv7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

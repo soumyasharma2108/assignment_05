@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.neelasurya.myapplication.feature.post.PostViewModel" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="callback"
+            type="com.neelasurya.myapplication.feature.post.PostListAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16dp"
+        android:background="@color/_FBD9D3"
+        android:onClick="@{(v) -> callback.onRowClick(v, position,viewModel)}"
+        android:paddingStart="@dimen/_16dp"
+        android:paddingTop="@dimen/_16dp"
+        app:mutableClickEnabled="@{viewModel.getPostInfo()}"
+
+        android:paddingEnd="@dimen/_16dp"
+        android:paddingBottom="@dimen/_16dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/_20000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:mutableImage="@{viewModel.getPostImage()}" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_16dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/image"
+            app:layout_constraintTop_toTopOf="@+id/image"
+            app:mutableText="@{viewModel.getPostTitle()}"
+            tools:text="name" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_1dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_14dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/image"
+            app:layout_constraintTop_toBottomOf="@id/textView1"
+            app:mutableStatusText="@{viewModel.getPostInfo()}"
+            tools:text="lkglfkglfkglfkgl" />
+
+        <ImageView
+            android:id="@+id/image_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/_20000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_drop_down_circle_black_24dp" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_1dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:background="@color/colorAccent"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:layout_marginBottom="@dimen/_16dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/_14dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/image"
+            app:layout_constraintTop_toBottomOf="@id/view1"
+            app:mutableText="@{viewModel.getPostAddress()}"
+            tools:text="lkglfkglfkglfkgl" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/_14dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/image"
+            app:layout_constraintTop_toBottomOf="@id/textView3"
+            app:mutableText="@{viewModel.getPostNumber()}"
+            tools:text="lkglfkglfkglfkgl" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:layout_marginBottom="@dimen/_16dp"
+            android:onClick="@{(v) -> callback.onButtonClickClick(v, position,viewModel)}"
+            android:padding="@dimen/_16dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_14dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView4"
+            app:mutableButtonStatus="@{viewModel.getPostInfo()}"
+            tools:text="lkglfkglfkglfkgl" />
+
+        <ImageView
+            android:id="@+id/image_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/_20000000"
+            android:onClick="@{(v) -> callback.onCancelClick(v, position,viewModel)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textView3"
+            app:srcCompat="@drawable/ic_cancel_black_24dp" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="image_cancel,textView5,textView4,textView3,view1"
+            app:mutableVisibility="@{viewModel.getPostIsExpanded()}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
